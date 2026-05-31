@@ -3,7 +3,7 @@ import Logo from "./Logo";
 
 export default function HeroSection() {
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative h-[65vh] min-h-[460px] md:h-screen overflow-hidden">
       {/* Background Video */}
       <video
         autoPlay
@@ -12,7 +12,7 @@ export default function HeroSection() {
         playsInline
         className="absolute inset-0 h-full w-full object-cover"
       >
-        <source src="../public/hairbar.mp4" type="video/mp4" />
+        <source src="/hairbar.mp4" type="video/mp4" />
       </video>
 
       {/* Dark Overlay */}
