@@ -62,7 +62,7 @@ export default function HeroSection() {
                   fontFamily: "Archivo Black, sans-serif",
                 }}
               >
-                HAIRBAR
+                HAIR
               </h1>
 
               {/* Subtitle */}
