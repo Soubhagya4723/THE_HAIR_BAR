@@ -34,16 +34,51 @@ export default function AboutSection() {
       }
     });
 
-    // ── 3. Image Parallax ──
-    gsap.fromTo(".img-parallax", 
-      { y: 50, scale: 1.05 },
-      { y: -30, scale: 1, ease: "none", scrollTrigger: {
-          trigger: ".img-trigger",
-          start: "top 80%",
-          end: "bottom 20%",
-          scrub: true
-      }}
+    // ── 3. Advanced Image Reveal & Parallax ──
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".img-trigger",
+        start: "top 75%",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Mask reveal for Main Image
+    tl.fromTo(".img-mask", 
+      { clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)" },
+      { clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)", duration: 1.5, ease: "power4.inOut" }
     );
+    // Scale for Main Image
+    tl.fromTo(".img-scale", 
+      { scale: 1.6, y: 50 },
+      { scale: 1, y: 0, duration: 1.5, ease: "power4.inOut" },
+      "<" 
+    );
+
+    // Mask reveal for Secondary Image
+    tl.fromTo(".img-mask-2", 
+      { clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)" },
+      { clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)", duration: 1.5, ease: "power4.inOut" },
+      "-=1.1"
+    );
+    // Scale for Secondary Image
+    tl.fromTo(".img-scale-2", 
+      { scale: 1.6, y: 50 },
+      { scale: 1, y: 0, duration: 1.5, ease: "power4.inOut" },
+      "<"
+    );
+
+    // Continuous slow parallax scrub after reveal
+    gsap.to(".img-scale, .img-scale-2", {
+      y: -40,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".img-trigger",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    });
 
     // ── 4. Content Fade In ──
     gsap.fromTo(".fade-up",
@@ -143,21 +178,21 @@ export default function AboutSection() {
           <div className="order-1 lg:order-2 relative h-[500px] md:h-[600px] w-full">
             
             {/* Main Image */}
-            <div className="absolute top-0 right-0 w-[80%] h-[85%] overflow-hidden">
+            <div className="img-mask absolute top-0 right-0 w-[80%] h-[85%] overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=800" 
                 alt="Barber styling" 
-                className="img-parallax w-full h-full object-cover grayscale opacity-80"
+                className="img-scale w-full h-full object-cover grayscale opacity-80"
               />
               <div className="absolute inset-0 border border-white/10 m-4 pointer-events-none"></div>
             </div>
 
             {/* Overlapping Secondary Image */}
-            <div className="absolute bottom-0 left-0 w-[55%] h-[50%] overflow-hidden shadow-2xl border-4 border-[#080808]">
+            <div className="img-mask-2 absolute bottom-0 left-0 w-[55%] h-[50%] overflow-hidden shadow-2xl border-4 border-[#080808]">
               <img 
                 src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&q=80&w=600" 
                 alt="Barber tools" 
-                className="img-parallax w-full h-full object-cover grayscale brightness-75"
+                className="img-scale-2 w-full h-full object-cover grayscale brightness-75"
               />
             </div>
 
