@@ -1,8 +1,19 @@
 import React from "react";
 import logoFull from "../assets/logo_full.png";
 import logoHorizontal from "../assets/logo_horizontal.png";
+import logoNavbar from "../assets/logo_navbar.png";
 
 export default function Logo({ variant = "full", className = "" }) {
+  if (variant === "navbar") {
+    return (
+      <img 
+        src={logoNavbar} 
+        alt="The Hair Bar Logo" 
+        className={`h-8 sm:h-9 md:h-11 w-auto object-contain block ${className}`}
+      />
+    );
+  }
+
   if (variant === "horizontal") {
     return (
       <img 

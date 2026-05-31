@@ -8,7 +8,7 @@ export default function Navbar() {
     <nav className="absolute top-0 left-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-transparent text-white">
       {/* Brand Logo */}
       <a href="#" className="cursor-pointer">
-        <Logo variant="horizontal" />
+        <Logo variant="navbar" />
       </a>
 
       {/* Navigation Links */}
@@ -56,7 +56,7 @@ export default function Navbar() {
           {/* Close Button & Logo */}
           <div>
             <div className="flex items-center justify-between mb-12">
-              <Logo variant="horizontal" />
+              <Logo variant="navbar" />
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-[#E4A861] hover:text-white transition-colors focus:outline-none"
