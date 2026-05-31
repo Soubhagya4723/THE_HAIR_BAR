@@ -27,11 +27,7 @@ export default function HeroSection() {
           <div className="w-full max-w-5xl flex flex-col items-center md:items-start">
             {/* Unified Logo Component */}
             <Logo variant="full" className="animate-title-reveal" />
-            
-            {/* Subtitle / Description */}
-            <p className="text-gray-300 text-xs sm:text-sm md:text-base tracking-[0.3em] uppercase mt-12 md:mt-8 text-center md:text-left select-none max-w-sm sm:max-w-md md:max-w-none leading-relaxed animate-badge-fade-up">
-              A Luxury Salon Initiative
-            </p>
+
           </div>
         </div>
       </div>
