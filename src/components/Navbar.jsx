@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <nav className="absolute top-0 left-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-transparent text-white">
@@ -34,12 +34,12 @@ export default function Navbar() {
 
       {/* Navigation Links */}
       <ul className="hidden lg:flex gap-10 text-xs font-semibold tracking-widest uppercase">
-        <li><a href="#" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer">Home</a></li>
-        <li><a href="#about" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">About</a></li>
-        <li><a href="#services" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">Services</a></li>
-        <li><a href="#stylists" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">Stylists</a></li>
-        <li><a href="#gallery" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">Gallery</a></li>
-        <li><a href="#contact" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">Contact</a></li>
+        <li><Link to="/" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer">Home</Link></li>
+        <li><Link to="/about" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">About</Link></li>
+        <li><Link to="/services" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">Services</Link></li>
+        <li><Link to="/stylists" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">Stylists</Link></li>
+        <li><Link to="/gallery" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">Gallery</Link></li>
+        <li><Link to="/contact" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">Contact</Link></li>
       </ul>
 
       {/* Call to Action Button */}
