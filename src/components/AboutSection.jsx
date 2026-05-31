@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="bg-[#080808] text-white py-24 md:py-32 overflow-hidden border-t border-white/5">
+    <section id="about" className="bg-[#000000] text-white py-24 md:py-32 overflow-hidden border-t border-[#E4A861]/10">
       <div className="w-full max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24">
         
         {/* ── 1. Section Header ─────────────────────────────────────── */}
@@ -22,7 +22,7 @@ export default function AboutSection() {
             <span className="italic text-[#E4A861] font-medium">Your Confidence.</span>
           </h2>
           
-          <div className="w-24 h-[1px] bg-[#E4A861]/30 mb-8"></div>
+          <div className="w-24 h-[1px] bg-[#E4A861]/40 mb-8"></div>
           
           <p className="text-gray-400 max-w-lg text-sm md:text-base leading-relaxed tracking-wide">
             More than a salon. We are a legacy of craftsmanship, passion, and timeless style. Step into our world and discover what makes our establishment a cut above the rest.
@@ -35,7 +35,7 @@ export default function AboutSection() {
           {/* Images Grid (Left) */}
           <div className="lg:col-span-5 relative">
             {/* Main Image */}
-            <div className="relative aspect-[4/5] overflow-hidden border border-white/10 group">
+            <div className="relative aspect-[4/5] overflow-hidden border border-[#E4A861]/15 group">
               <img 
                 src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=800" 
                 alt="Salon Interior" 
@@ -45,7 +45,7 @@ export default function AboutSection() {
             </div>
             
             {/* Since 2023 Badge Overlap */}
-            <div className="absolute -bottom-8 -right-8 md:-right-12 border border-[#E4A861]/30 bg-[#0c0c0c] p-6 md:p-10 text-center shadow-2xl z-10 hidden sm:block">
+            <div className="absolute -bottom-8 -right-8 md:-right-12 border border-[#E4A861]/40 bg-[#050505] p-6 md:p-10 text-center shadow-2xl z-10 hidden sm:block">
               <span className="block text-[#E4A861] text-3xl md:text-4xl mb-3">✂</span>
               <h3 
                 className="text-2xl md:text-3xl font-medium text-white mb-1"
@@ -89,7 +89,7 @@ export default function AboutSection() {
             {/* Vertical Timeline */}
             <div className="hidden md:flex flex-col relative pl-10 xl:pl-12 w-full xl:w-[280px]">
               {/* Vertical line connecting timeline nodes */}
-              <div className="absolute top-2 bottom-6 left-[3px] w-[1px] bg-[#E4A861]/20"></div>
+              <div className="absolute top-2 bottom-6 left-[3px] w-[1px] bg-[#E4A861]/40"></div>
 
               {/* Node 1: 2023 */}
               <div className="relative mb-14 group">
@@ -135,18 +135,18 @@ export default function AboutSection() {
         </div>
 
         {/* ── 3. Founder's Note & Vision ────────────────────────────── */}
-        <div className="bg-[#0c0c0c] border border-white/5 p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row gap-16 items-center mb-32 lg:mb-40">
+        <div className="bg-[#050505] border border-[#E4A861]/15 p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row gap-16 items-center mb-32 lg:mb-40">
           
           {/* Founder Image */}
           <div className="lg:w-[30%] w-full relative group">
-            <div className="aspect-[3/4] overflow-hidden border border-white/10">
+            <div className="aspect-[3/4] overflow-hidden border border-[#E4A861]/15">
               <img 
                 src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" 
                 alt="Founder" 
                 className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 transition-all duration-700" 
               />
             </div>
-            <div className="absolute bottom-6 left-6 right-6 backdrop-blur-md bg-black/40 border border-white/10 p-4">
+            <div className="absolute bottom-6 left-6 right-6 backdrop-blur-md bg-black/40 border border-[#E4A861]/20 p-4">
               <h4 
                 className="italic text-2xl text-white mb-1"
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
@@ -186,7 +186,7 @@ export default function AboutSection() {
           </div>
 
           {/* Divider on LG screens */}
-          <div className="hidden lg:block w-[1px] h-64 bg-white/5 mx-2"></div>
+          <div className="hidden lg:block w-[1px] h-64 bg-[#E4A861]/15 mx-2"></div>
 
           {/* Vision/Mission/Promise */}
           <div className="lg:w-[30%] w-full flex flex-col gap-10">
@@ -242,7 +242,7 @@ export default function AboutSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
             
             {/* Value 1 */}
-            <div className="border border-white/5 bg-[#0c0c0c] p-8 flex flex-col md:flex-row gap-6 hover:border-[#E4A861]/40 transition-colors duration-500 group">
+            <div className="border border-[#E4A861]/10 bg-[#050505] p-8 flex flex-col md:flex-row gap-6 hover:border-[#E4A861]/40 transition-colors duration-500 group">
               <div className="text-[#E4A861] mt-1 opacity-80 group-hover:scale-110 transition-transform">
                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
@@ -255,7 +255,7 @@ export default function AboutSection() {
             </div>
 
             {/* Value 2 */}
-            <div className="border border-white/5 bg-[#0c0c0c] p-8 flex flex-col md:flex-row gap-6 hover:border-[#E4A861]/40 transition-colors duration-500 group">
+            <div className="border border-[#E4A861]/10 bg-[#050505] p-8 flex flex-col md:flex-row gap-6 hover:border-[#E4A861]/40 transition-colors duration-500 group">
               <div className="text-[#E4A861] mt-1 opacity-80 group-hover:scale-110 transition-transform">
                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
@@ -268,7 +268,7 @@ export default function AboutSection() {
             </div>
 
             {/* Value 3 */}
-            <div className="border border-white/5 bg-[#0c0c0c] p-8 flex flex-col md:flex-row gap-6 hover:border-[#E4A861]/40 transition-colors duration-500 group">
+            <div className="border border-[#E4A861]/10 bg-[#050505] p-8 flex flex-col md:flex-row gap-6 hover:border-[#E4A861]/40 transition-colors duration-500 group">
               <div className="text-[#E4A861] mt-1 opacity-80 group-hover:scale-110 transition-transform">
                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"></path>
@@ -281,7 +281,7 @@ export default function AboutSection() {
             </div>
 
             {/* Value 4 */}
-            <div className="border border-white/5 bg-[#0c0c0c] p-8 flex flex-col md:flex-row gap-6 hover:border-[#E4A861]/40 transition-colors duration-500 group">
+            <div className="border border-[#E4A861]/10 bg-[#050505] p-8 flex flex-col md:flex-row gap-6 hover:border-[#E4A861]/40 transition-colors duration-500 group">
               <div className="text-[#E4A861] mt-1 opacity-80 group-hover:scale-110 transition-transform">
                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>

@@ -112,7 +112,7 @@ export default function StylistsSection() {
   }, []);
 
   return (
-    <section id="stylists" className="bg-[#050505] text-white py-24 border-t border-white/5 relative">
+    <section id="stylists" className="bg-[#000000] text-white py-24 border-t border-[#E4A861]/10 relative">
       <div className="w-full max-w-[1500px] mx-auto px-6 md:px-12 lg:px-20">
         
         {/* ── Header ──────────────────────────────────────────────────────── */}
@@ -128,7 +128,7 @@ export default function StylistsSection() {
               Meet The Masters<br />
               <span className="italic text-[#E4A861] font-medium">Behind Your Style.</span>
             </h2>
-            <div className="w-20 h-[1px] bg-[#E4A861]/30 mb-6"></div>
+            <div className="w-20 h-[1px] bg-[#E4A861]/40 mb-6"></div>
             <p className="text-gray-400 max-w-md text-xs md:text-sm leading-relaxed mb-8">
               Our team of industry stylists is dedicated to providing you with exceptional grooming experiences and outstanding results.
             </p>
@@ -152,21 +152,21 @@ export default function StylistsSection() {
           {stylistsData.map((stylist) => (
             <div 
               key={stylist.id} 
-              className="border border-white/10 bg-[#0a0a0a] group cursor-pointer relative overflow-hidden flex flex-col"
+              className="border border-[#E4A861]/15 bg-[#050505] group cursor-pointer relative overflow-hidden flex flex-col"
               onClick={() => setSelectedStylist(stylist)}
             >
               {/* Image Container */}
-              <div className="w-full h-[350px] overflow-hidden relative border-b border-white/5">
+              <div className="w-full h-[350px] overflow-hidden relative border-b border-[#E4A861]/10">
                 <img 
                   src={stylist.image} 
                   alt={stylist.name} 
                   className="w-full h-full object-cover object-top grayscale brightness-75 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
               </div>
               
               {/* Content Container */}
-              <div className="p-6 flex flex-col flex-1 relative z-10 bg-[#0a0a0a] group-hover:bg-[#111] transition-colors duration-500">
+              <div className="p-6 flex flex-col flex-1 relative z-10 bg-[#050505] group-hover:bg-[#0c0c0c] transition-colors duration-500">
                 <h4 
                   className="text-[#E4A861] text-2xl mb-1 italic opacity-80"
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
@@ -183,11 +183,11 @@ export default function StylistsSection() {
                   {stylist.shortDesc}
                 </p>
                 
-                {/* Social Placeholder */}
-                <div className="flex items-center gap-3 mt-auto pt-4 border-t border-white/5">
-                  <span className="w-6 h-6 rounded-full border border-white/20 flex items-center justify-center text-[10px] text-gray-400 hover:text-[#E4A861] hover:border-[#E4A861] transition-colors">in</span>
-                  <span className="w-6 h-6 rounded-full border border-white/20 flex items-center justify-center text-[10px] text-gray-400 hover:text-[#E4A861] hover:border-[#E4A861] transition-colors">f</span>
-                  <span className="w-6 h-6 rounded-full border border-white/20 flex items-center justify-center text-[10px] text-gray-400 hover:text-[#E4A861] hover:border-[#E4A861] transition-colors">x</span>
+                {/* Social Icons */}
+                <div className="flex items-center gap-3 mt-auto pt-4 border-t border-[#E4A861]/10">
+                  <span className="w-6 h-6 rounded-full border border-[#E4A861]/25 flex items-center justify-center text-[10px] text-gray-500 hover:text-black hover:bg-[#E4A861] hover:border-[#E4A861] transition-all">in</span>
+                  <span className="w-6 h-6 rounded-full border border-[#E4A861]/25 flex items-center justify-center text-[10px] text-gray-500 hover:text-black hover:bg-[#E4A861] hover:border-[#E4A861] transition-all">f</span>
+                  <span className="w-6 h-6 rounded-full border border-[#E4A861]/25 flex items-center justify-center text-[10px] text-gray-500 hover:text-black hover:bg-[#E4A861] hover:border-[#E4A861] transition-all">x</span>
                 </div>
               </div>
             </div>
@@ -207,7 +207,7 @@ export default function StylistsSection() {
           ></div>
           
           {/* Modal Content */}
-          <div className="relative w-full max-w-5xl bg-[#0a0a0a] border border-white/10 shadow-2xl flex flex-col md:flex-row overflow-hidden max-h-[90vh] overflow-y-auto z-10 animate-badge-fade-up">
+          <div className="relative w-full max-w-5xl bg-[#050505] border border-[#E4A861]/20 shadow-2xl shadow-[#E4A861]/5 flex flex-col md:flex-row overflow-hidden max-h-[90vh] overflow-y-auto z-10 animate-badge-fade-up">
             
             {/* Close Button */}
             <button 
@@ -218,7 +218,7 @@ export default function StylistsSection() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
             </button>
-
+ 
             {/* Left: Image */}
             <div className="w-full md:w-2/5 h-[300px] md:h-auto relative">
               <img 
@@ -226,9 +226,9 @@ export default function StylistsSection() {
                 alt={selectedStylist.name} 
                 className="w-full h-full object-cover grayscale brightness-90"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] md:bg-gradient-to-r md:from-transparent md:to-[#0a0a0a] opacity-80"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] md:bg-gradient-to-r md:from-transparent md:to-[#050505] opacity-80"></div>
             </div>
-
+ 
             {/* Right: Details */}
             <div className="w-full md:w-3/5 p-8 md:p-12 lg:p-16 flex flex-col justify-center relative">
               <h4 className="text-gray-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">
@@ -250,7 +250,7 @@ export default function StylistsSection() {
               <p className="text-gray-400 text-sm leading-relaxed mb-10 border-l-2 border-[#E4A861]/30 pl-4">
                 {selectedStylist.bio}
               </p>
-
+ 
               <div className="flex flex-col xl:flex-row gap-12">
                 
                 {/* Progress Bars */}
@@ -261,7 +261,7 @@ export default function StylistsSection() {
                         <span className="text-gray-300 font-medium tracking-wide">{skill.name}</span>
                         <span className="text-[#E4A861]">{skill.value}%</span>
                       </div>
-                      <div className="w-full h-[2px] bg-white/10 rounded-full overflow-hidden">
+                      <div className="w-full h-[2px] bg-[#E4A861]/10 rounded-full overflow-hidden">
                         <div 
                           className="h-full bg-[#E4A861] rounded-full" 
                           style={{ width: `${skill.value}%` }}
@@ -270,12 +270,12 @@ export default function StylistsSection() {
                     </div>
                   ))}
                 </div>
-
+ 
                 {/* Stats List */}
                 <div className="xl:w-1/3 flex flex-col gap-6 justify-center">
                   {selectedStylist.stats.map((stat, idx) => (
                     <div key={idx} className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-lg text-[#E4A861] bg-[#111]">
+                      <div className="w-10 h-10 rounded-full border border-[#E4A861]/20 flex items-center justify-center text-lg text-[#E4A861] bg-[#050505]">
                         {stat.icon}
                       </div>
                       <div>
@@ -285,10 +285,10 @@ export default function StylistsSection() {
                     </div>
                   ))}
                 </div>
-
+ 
               </div>
             </div>
-
+ 
           </div>
         </div>
       )}

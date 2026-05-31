@@ -49,7 +49,7 @@ html, body, #root {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: #050505;
+  background-color: #000000;
   box-sizing: border-box;
   text-align: left;
   max-width: 100% !important;
@@ -107,6 +107,39 @@ html, body, #root {
   font-size: clamp(12px, 1.4vw, 22px);
   font-weight: 400;
   letter-spacing: 0.05em;
-  color: rgba(255,255,255,0.9);
+  color: #E4A861;
   text-transform: lowercase;
+}
+
+/* Custom Utilities for Black & Gold Theme */
+@utility text-gold-gradient {
+  background: linear-gradient(135deg, #B38F4D 0%, #F3E5AB 50%, #AA7C11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility bg-gold-gradient {
+  background: linear-gradient(135deg, #AA7C11 0%, #F3E5AB 50%, #B38F4D 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #B38F4D;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E4A861;
+}
+
+/* Text Selection */
+::selection {
+  background-color: #E4A861;
+  color: #000000;
 }

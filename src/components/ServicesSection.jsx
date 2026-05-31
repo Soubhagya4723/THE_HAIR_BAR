@@ -85,7 +85,7 @@ const servicesList = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="bg-[#050505] text-white py-24 border-t border-white/5">
+    <section id="services" className="bg-[#000000] text-white py-24 border-t border-[#E4A861]/10">
       
       {/* ── Header ──────────────────────────────────────────────────────── */}
       <div className="w-full max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 mb-20 relative">
@@ -107,7 +107,7 @@ export default function ServicesSection() {
             <button className="border border-[#E4A861] bg-[#E4A861] text-black px-6 py-3 text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-[#E4A861] transition-all duration-300">
               Book Appointment
             </button>
-            <button className="border border-white/20 px-6 py-3 text-[10px] md:text-xs tracking-[0.2em] uppercase text-white hover:border-[#E4A861] hover:text-[#E4A861] transition-all duration-300 flex items-center gap-2">
+            <button className="border border-[#E4A861]/30 text-[#E4A861] px-6 py-3 text-[10px] md:text-xs tracking-[0.2em] uppercase hover:border-[#E4A861] hover:text-white transition-all duration-300 flex items-center gap-2">
               View Packages <span className="text-lg leading-none">→</span>
             </button>
           </div>
@@ -135,11 +135,11 @@ export default function ServicesSection() {
           <div className="w-12 h-[1px] bg-[#E4A861]/40"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/10 border border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-[#E4A861]/10 border border-[#E4A861]/15">
           {servicesList.map((service, idx) => (
             <div 
               key={idx} 
-              className="bg-[#0a0a0a] p-8 lg:p-10 relative group overflow-hidden hover:bg-[#111] transition-colors duration-500 cursor-pointer flex flex-col justify-between min-h-[320px]"
+              className="bg-[#050505] p-8 lg:p-10 relative group overflow-hidden hover:bg-[#0c0c0c] transition-colors duration-500 cursor-pointer flex flex-col justify-between min-h-[320px]"
             >
               {/* Background hover image (simulated with generic barbershop image) */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700">
@@ -151,7 +151,7 @@ export default function ServicesSection() {
               </div>
               
               <div className="relative z-10">
-                <div className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center text-[#E4A861] mb-6 group-hover:border-[#E4A861]/40 group-hover:scale-110 transition-all duration-500">
+                <div className="w-16 h-16 rounded-full border border-[#E4A861]/20 flex items-center justify-center text-[#E4A861] mb-6 group-hover:border-[#E4A861]/40 group-hover:scale-110 transition-all duration-500">
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-3 tracking-wide">{service.title}</h3>
@@ -160,7 +160,7 @@ export default function ServicesSection() {
                 </p>
               </div>
 
-              <div className="relative z-10 flex items-center justify-between border-t border-white/10 pt-6 mt-auto">
+              <div className="relative z-10 flex items-center justify-between border-t border-[#E4A861]/15 pt-6 mt-auto">
                 <span className="text-[#E4A861] font-serif text-2xl italic">{service.price}</span>
                 <span className="text-[10px] uppercase tracking-[0.2em] text-white/50 group-hover:text-[#E4A861] transition-colors flex items-center gap-2">
                   View Details <span>→</span>
@@ -184,7 +184,7 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-stretch">
           
           {/* Silver Package */}
-          <div className="bg-[#0a0a0a] border border-white/10 p-10 flex flex-col hover:border-[#E4A861]/40 transition-colors group relative">
+          <div className="bg-[#050505] border border-[#E4A861]/15 p-10 flex flex-col hover:border-[#E4A861]/40 transition-colors group relative">
             <h5 className="text-gray-400 text-[10px] font-bold tracking-[0.2em] uppercase text-center mb-4">Silver</h5>
             <h3 className="text-2xl text-white font-serif text-center mb-2 italic">Essentials Package</h3>
             <p className="text-gray-500 text-xs text-center mb-8">Perfect for regular grooming.</p>
@@ -197,14 +197,14 @@ export default function ServicesSection() {
             
             <div className="text-center mt-auto">
               <span className="text-4xl text-[#E4A861] font-serif italic block mb-6">$79</span>
-              <button className="w-full border border-white/20 py-3 text-[10px] tracking-[0.2em] uppercase text-white hover:border-[#E4A861] hover:text-[#E4A861] transition-colors">
+              <button className="w-full border border-[#E4A861]/35 py-3 text-[10px] tracking-[0.2em] uppercase text-[#E4A861] hover:border-[#E4A861] hover:text-white transition-colors">
                 Book Now
               </button>
             </div>
           </div>
 
           {/* Gold Package (Highlighted) */}
-          <div className="bg-[#0f0e0c] border border-[#E4A861] p-10 flex flex-col relative transform lg:-translate-y-4 shadow-2xl shadow-[#E4A861]/5">
+          <div className="bg-[#0d0a05] border border-[#E4A861] p-10 flex flex-col relative transform lg:-translate-y-4 shadow-2xl shadow-[#E4A861]/10">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#E4A861] text-black text-[9px] font-bold tracking-[0.2em] uppercase px-4 py-1">
               Most Popular
             </div>
@@ -229,7 +229,7 @@ export default function ServicesSection() {
           </div>
 
           {/* Platinum Package */}
-          <div className="bg-[#0a0a0a] border border-white/10 p-10 flex flex-col hover:border-[#E4A861]/40 transition-colors group relative">
+          <div className="bg-[#050505] border border-[#E4A861]/15 p-10 flex flex-col hover:border-[#E4A861]/40 transition-colors group relative">
             <h5 className="text-gray-400 text-[10px] font-bold tracking-[0.2em] uppercase text-center mb-4">Platinum</h5>
             <h3 className="text-2xl text-white font-serif text-center mb-2 italic">Luxury Package</h3>
             <p className="text-gray-500 text-xs text-center mb-8">The ultimate grooming experience.</p>
@@ -245,14 +245,14 @@ export default function ServicesSection() {
             
             <div className="text-center mt-auto">
               <span className="text-4xl text-[#E4A861] font-serif italic block mb-6">$199</span>
-              <button className="w-full border border-white/20 py-3 text-[10px] tracking-[0.2em] uppercase text-white hover:border-[#E4A861] hover:text-[#E4A861] transition-colors">
+              <button className="w-full border border-[#E4A861]/35 py-3 text-[10px] tracking-[0.2em] uppercase text-[#E4A861] hover:border-[#E4A861] hover:text-white transition-colors">
                 Book Now
               </button>
             </div>
           </div>
 
           {/* Promotional Side Banner */}
-          <div className="bg-[#111] relative overflow-hidden flex flex-col justify-center border border-white/10 group h-full min-h-[400px]">
+          <div className="bg-[#050505] relative overflow-hidden flex flex-col justify-center border border-[#E4A861]/15 group h-full min-h-[400px]">
             <div className="absolute inset-0">
               <img 
                 src="https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&q=80&w=600" 

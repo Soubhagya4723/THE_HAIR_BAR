@@ -83,11 +83,11 @@ export default function GallerySection() {
     : galleryImages.filter(img => img.category === activeFilter);
 
   return (
-    <section id="gallery" className="bg-[#050505] text-white pt-24 border-t border-white/5 relative">
+    <section id="gallery" className="bg-[#000000] text-white pt-24 border-t border-[#E4A861]/10 relative">
       <div className="w-full max-w-[1500px] mx-auto px-6 md:px-12 lg:px-20">
         
         {/* ── Top Header Banner ──────────────────────────────────────────────── */}
-        <div className="relative border border-white/10 bg-[#0a0a0a] p-10 md:p-16 mb-12 flex flex-col md:flex-row justify-between items-center overflow-hidden">
+        <div className="relative border border-[#E4A861]/15 bg-[#050505] p-10 md:p-16 mb-12 flex flex-col md:flex-row justify-between items-center overflow-hidden">
           {/* Background overlay image */}
           <div className="absolute top-0 right-0 w-full md:w-1/2 h-full opacity-30">
             <img 
@@ -95,7 +95,7 @@ export default function GallerySection() {
               alt="Salon Background" 
               className="w-full h-full object-cover grayscale"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/80 to-transparent"></div>
           </div>
 
           {/* Left Content */}
@@ -119,7 +119,7 @@ export default function GallerySection() {
           </div>
 
           {/* Right Floating Badge */}
-          <div className="relative z-10 border border-white/20 bg-black/60 backdrop-blur-md p-8 flex flex-col items-center justify-center text-center">
+          <div className="relative z-10 border border-[#E4A861]/35 bg-black/60 backdrop-blur-md p-8 flex flex-col items-center justify-center text-center">
             <svg className="w-8 h-8 text-[#E4A861] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -130,7 +130,7 @@ export default function GallerySection() {
         </div>
 
         {/* ── Filter Navigation ──────────────────────────────────────────────── */}
-        <div className="flex flex-wrap items-center justify-between gap-4 border-y border-white/10 py-6 mb-8">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-y border-[#E4A861]/15 py-6 mb-8">
           <ul className="flex flex-wrap items-center gap-6 md:gap-10">
             {filters.map((filter) => (
               <li 
@@ -159,7 +159,7 @@ export default function GallerySection() {
           {filteredImages.map((img) => (
             <div 
               key={img.id} 
-              className={`relative overflow-hidden group bg-[#0a0a0a] cursor-pointer ${activeFilter === "ALL GALLERY" ? img.span : "col-span-1 row-span-1"}`}
+              className={`relative overflow-hidden group bg-[#050505] cursor-pointer ${activeFilter === "ALL GALLERY" ? img.span : "col-span-1 row-span-1"}`}
             >
               <img 
                 src={img.src} 
@@ -178,7 +178,7 @@ export default function GallerySection() {
         </div>
 
         {/* ── Bottom Banner & Stats ─────────────────────────────────────────── */}
-        <div className="border border-white/10 bg-[#0a0a0a] p-8 md:p-12 mb-24 flex flex-col lg:flex-row justify-between items-center gap-12">
+        <div className="border border-[#E4A861]/15 bg-[#050505] p-8 md:p-12 mb-24 flex flex-col lg:flex-row justify-between items-center gap-12">
           
           <div className="text-center lg:text-left">
             <h4 className="text-[#E4A861] text-[9px] font-bold tracking-[0.2em] uppercase mb-4 flex items-center justify-center lg:justify-start gap-2">

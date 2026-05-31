@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ContactSection() {
   return (
-    <footer id="contact" className="bg-[#050505] text-white pt-24 border-t border-white/5 relative overflow-hidden">
+    <footer id="contact" className="bg-[#000000] text-white pt-24 border-t border-[#E4A861]/10 relative overflow-hidden">
       
       <div className="w-full max-w-[1500px] mx-auto px-6 md:px-12 lg:px-20 mb-24">
         <div className="flex flex-col xl:flex-row gap-16 lg:gap-24">
@@ -21,31 +21,31 @@ export default function ContactSection() {
             <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-10 max-w-lg">
               Whether you have a question about our services, need help booking an appointment, or just want to drop a line, our team is ready to assist you.
             </p>
-
+ 
             <form className="space-y-6 max-w-2xl">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <input 
                   type="text" 
                   placeholder="Your Name *" 
-                  className="w-full bg-[#0a0a0a] border border-white/10 text-white px-6 py-4 text-xs tracking-wide focus:outline-none focus:border-[#E4A861] transition-colors"
+                  className="w-full bg-[#050505] border border-[#E4A861]/20 text-white px-6 py-4 text-xs tracking-wide focus:outline-none focus:border-[#E4A861] transition-colors"
                   required 
                 />
                 <input 
                   type="email" 
                   placeholder="Your Email *" 
-                  className="w-full bg-[#0a0a0a] border border-white/10 text-white px-6 py-4 text-xs tracking-wide focus:outline-none focus:border-[#E4A861] transition-colors"
+                  className="w-full bg-[#050505] border border-[#E4A861]/20 text-white px-6 py-4 text-xs tracking-wide focus:outline-none focus:border-[#E4A861] transition-colors"
                   required 
                 />
               </div>
               <input 
                 type="text" 
                 placeholder="Subject" 
-                className="w-full bg-[#0a0a0a] border border-white/10 text-white px-6 py-4 text-xs tracking-wide focus:outline-none focus:border-[#E4A861] transition-colors"
+                className="w-full bg-[#050505] border border-[#E4A861]/20 text-white px-6 py-4 text-xs tracking-wide focus:outline-none focus:border-[#E4A861] transition-colors"
               />
               <textarea 
                 placeholder="Your Message *" 
                 rows="5"
-                className="w-full bg-[#0a0a0a] border border-white/10 text-white px-6 py-4 text-xs tracking-wide focus:outline-none focus:border-[#E4A861] transition-colors resize-none"
+                className="w-full bg-[#050505] border border-[#E4A861]/20 text-white px-6 py-4 text-xs tracking-wide focus:outline-none focus:border-[#E4A861] transition-colors resize-none"
                 required
               ></textarea>
               <button 
@@ -56,15 +56,15 @@ export default function ContactSection() {
               </button>
             </form>
           </div>
-
+ 
           {/* ── Contact Info & Image (Right) ────────────────────────────────── */}
           <div className="xl:w-[40%] flex flex-col justify-between relative">
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 relative z-10">
               {/* Box 1 */}
-              <div className="bg-[#0a0a0a] border border-white/5 p-8 flex flex-col gap-4">
+              <div className="bg-[#050505] border border-[#E4A861]/15 p-8 flex flex-col gap-4">
                 <div className="text-[#E4A861]">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                 </div>
                 <div>
                   <h5 className="text-white text-xs font-bold tracking-widest uppercase mb-2">Location</h5>
@@ -73,7 +73,7 @@ export default function ContactSection() {
               </div>
               
               {/* Box 2 */}
-              <div className="bg-[#0a0a0a] border border-white/5 p-8 flex flex-col gap-4">
+              <div className="bg-[#050505] border border-[#E4A861]/15 p-8 flex flex-col gap-4">
                 <div className="text-[#E4A861]">
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 </div>
@@ -83,9 +83,9 @@ export default function ContactSection() {
                 </div>
               </div>
             </div>
-
+ 
             {/* Background Decorative Image */}
-            <div className="relative w-full h-[300px] xl:h-[350px] overflow-hidden border border-white/10 group">
+            <div className="relative w-full h-[300px] xl:h-[350px] overflow-hidden border border-[#E4A861]/15 group">
               <img 
                 src="https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?auto=format&fit=crop&q=80&w=1200" 
                 alt="Barbershop Details" 
@@ -110,7 +110,7 @@ export default function ContactSection() {
       </div>
 
       {/* ── Divider ──────────────────────────────────────────────────────── */}
-      <div className="w-full h-[1px] bg-white/5 mb-20"></div>
+      <div className="w-full h-[1px] bg-[#E4A861]/15 mb-20"></div>
 
       {/* ── Main Footer Area (Matches Screenshot EXACTLY) ──────────────── */}
       <div className="w-full max-w-[1500px] mx-auto px-6 md:px-12 lg:px-20 pb-16">
@@ -133,7 +133,7 @@ export default function ContactSection() {
             {/* Social Icons */}
             <div className="flex items-center gap-4">
               {['Ig', 'Fb', 'Yt', 'X'].map((social, idx) => (
-                <a key={idx} href="#" className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-[10px] text-gray-400 hover:text-black hover:bg-[#E4A861] hover:border-[#E4A861] transition-all">
+                <a key={idx} href="#" className="w-8 h-8 rounded-full border border-[#E4A861]/25 flex items-center justify-center text-[10px] text-gray-400 hover:text-black hover:bg-[#E4A861] hover:border-[#E4A861] transition-all">
                   {social}
                 </a>
               ))}
@@ -201,12 +201,12 @@ export default function ContactSection() {
               <input 
                 type="email" 
                 placeholder="Your email address" 
-                className="w-full bg-[#111] border border-white/10 text-white px-4 py-3 text-xs focus:outline-none focus:border-[#E4A861] transition-colors"
+                className="w-full bg-[#050505] border border-[#E4A861]/20 text-white px-4 py-3 text-xs focus:outline-none focus:border-[#E4A861] transition-colors"
                 required
               />
               <button 
                 type="submit"
-                className="bg-[#E4A861] text-black px-4 flex items-center justify-center hover:bg-white transition-colors"
+                className="bg-[#E4A861] text-black px-4 flex items-center justify-center hover:bg-[#FAF6F0] transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </button>
@@ -217,7 +217,7 @@ export default function ContactSection() {
       </div>
 
       {/* ── Footer Bottom Copyright ────────────────────────────────────── */}
-      <div className="w-full bg-[#020202] py-6 border-t border-white/5">
+      <div className="w-full bg-[#020202] py-6 border-t border-[#E4A861]/10">
         <div className="max-w-[1500px] mx-auto px-6 md:px-12 lg:px-20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-600 text-[10px] tracking-wider uppercase">
             © 2026 Hairbar. All Rights Reserved.
