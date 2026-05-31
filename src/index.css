@@ -143,3 +143,12 @@ html, body, #root {
   background-color: #E4A861;
   color: #000000;
 }
+
+/* Logo cursive script styles */
+.gold-text-cursive {
+  font-family: 'Alex Brush', cursive;
+  background: linear-gradient(135deg, #B38F4D 0%, #F3E5AB 50%, #AA7C11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #E4A861; /* Fallback for browsers not supporting text clip */
+}

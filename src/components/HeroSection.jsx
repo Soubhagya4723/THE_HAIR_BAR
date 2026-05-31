@@ -1,3 +1,6 @@
+import React from "react";
+import Logo from "./Logo";
+
 export default function HeroSection() {
   return (
     <section className="relative h-screen overflow-hidden">
@@ -20,99 +23,15 @@ export default function HeroSection() {
 
       {/* Hero Content */}
       <div className="relative z-20 h-full flex items-center">
-        <div className="w-full pl-4 md:pl-8 lg:pl-12 pr-8 lg:pr-20">
-
-          <div className="flex items-center">
-
-            {/* Vertical Text */}
-            <div className="flex items-center mr-8 lg:mr-10">
-              <h2
-                className="
-                  text-white
-                  text-4xl
-                  lg:text-6xl
-                  font-bold
-                  rotate-[-90deg]
-                  whitespace-nowrap
-                "
-              >
-                the
-              </h2>
-
-              <div className="w-[2px] h-24 lg:h-32 bg-white ml-8"></div>
-            </div>
-
-            {/* Main Content */}
-            <div className="relative w-[52%]">
-
-              {/* HAIRBAR */}
-              <h1
-                className="
-                  text-white
-                  uppercase
-                  leading-[0.9]
-                  tracking-tight
-                  text-[100px]
-                  md:text-[135px]
-                  lg:text-[170px]
-                  xl:text-[190px]
-                  font-black
-                "
-                style={{
-                  fontFamily: "Archivo Black, sans-serif",
-                }}
-              >
-                HAIRBAR
-              </h1>
-
-              {/* Subtitle */}
-              <p
-                className="
-                  text-white
-                  mt-2
-                  text-lg
-                  md:text-2xl
-                  lg:text-[38px]
-                  font-light
-                "
-              >
-                A Luxury Salon Initiative
-              </p>
-
-              {/* Badge */}
-              <div
-                className="
-                  absolute
-                  right-[-220px]
-                  bottom-[-2px]
-                  bg-[#E4A861]
-                  px-8
-                  lg:px-14
-                  py-3
-                  lg:py-4
-                  shadow-xl
-                "
-              >
-                <h3
-                  className="
-                    text-white
-                    italic
-                    whitespace-nowrap
-                    text-2xl
-                    md:text-3xl
-                    lg:text-4xl
-                    leading-none
-                  "
-                  style={{
-                    fontFamily: "Cormorant Garamond, serif",
-                  }}
-                >
-                  Care Of Your Hair
-                </h3>
-              </div>
-
-            </div>
-
+        <div className="w-full px-6 sm:px-12 md:pl-16 lg:pl-24 pr-6">
+          <div className="w-full max-w-5xl flex flex-col items-center md:items-start">
+            {/* Unified Logo Component */}
+            <Logo variant="full" className="animate-title-reveal" />
+            
+            {/* Subtitle / Description */}
+            <p className="text-gray-300 text-xs sm:text-sm md:text-base tracking-[0.3em] uppercase mt-12 md:mt-8 text-center md:text-left select-none max-w-sm sm:max-w-md md:max-w-none leading-relaxed animate-badge-fade-up">
+              A Luxury Salon Initiative
+            </p>
           </div>
         </div>
       </div>

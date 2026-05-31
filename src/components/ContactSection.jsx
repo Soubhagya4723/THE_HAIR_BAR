@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "./Logo";
 
 export default function ContactSection() {
   return (
@@ -118,14 +119,8 @@ export default function ContactSection() {
           
           {/* Logo & About */}
           <div className="lg:col-span-2 pr-4">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="flex items-center justify-center w-10 h-10 border border-[#E4A861]">
-                <span className="font-serif italic text-xl text-[#E4A861]">HB</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-black uppercase tracking-[0.15em] leading-none text-lg">HAIRBAR</span>
-                <span className="text-[7px] tracking-[0.3em] text-[#E4A861] mt-1 uppercase">Excellence & Tradition</span>
-              </div>
+            <div className="mb-6">
+              <Logo variant="horizontal" />
             </div>
             <p className="text-gray-500 text-xs leading-relaxed mb-6">
               Elevating your style with precision, passion, and a legacy of excellence. Experience premium grooming at its finest.

@@ -1,36 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import Logo from "./Logo";
 
 export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <nav className="absolute top-0 left-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-transparent text-white">
-      {/* Letter Logo */}
-      <div className="flex items-center gap-3 cursor-pointer">
-        <div className="flex items-center justify-center w-12 h-12 border border-[#E4A861] relative">
-          {/* Subtle decorative corners */}
-          <div className="absolute top-0 left-0 w-1 h-1 border-t border-l border-[#E4A861]"></div>
-          <div className="absolute top-0 right-0 w-1 h-1 border-t border-r border-[#E4A861]"></div>
-          <div className="absolute bottom-0 left-0 w-1 h-1 border-b border-l border-[#E4A861]"></div>
-          <div className="absolute bottom-0 right-0 w-1 h-1 border-b border-r border-[#E4A861]"></div>
-          
-          <span 
-            className="font-serif italic text-2xl text-[#E4A861]"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
-          >
-            HB
-          </span>
-        </div>
-        <div className="flex flex-col">
-          <span 
-            className="font-black uppercase tracking-[0.15em] leading-none text-xl text-white hover:text-[#E4A861] transition-colors"
-            style={{ fontFamily: "'Archivo Black', sans-serif" }}
-          >
-            HAIRBAR
-          </span>
-          <span className="text-[9px] tracking-[0.3em] text-[#E4A861] mt-1 uppercase">
-            Excellence & Tradition
-          </span>
-        </div>
-      </div>
+      {/* Brand Logo */}
+      <a href="#" className="cursor-pointer">
+        <Logo variant="horizontal" />
+      </a>
 
       {/* Navigation Links */}
       <ul className="hidden lg:flex gap-10 text-xs font-semibold tracking-widest uppercase">
@@ -48,10 +26,72 @@ export default function Navbar() {
       </button>
 
       {/* Mobile Menu Toggle (Hamburger) */}
-      <div className="lg:hidden text-[#E4A861] cursor-pointer">
+      <button 
+        onClick={() => setIsMobileMenuOpen(true)}
+        className="lg:hidden text-[#E4A861] cursor-pointer focus:outline-none"
+        aria-label="Open Menu"
+      >
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
+      </button>
+
+      {/* Sliding Mobile Menu Drawer */}
+      <div 
+        className={`fixed inset-0 z-[100] lg:hidden flex justify-end transition-opacity duration-300 ${
+          isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {/* Backdrop overlay */}
+        <div 
+          className="absolute inset-0 bg-black/85 backdrop-blur-md" 
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+        
+        {/* Drawer container */}
+        <div 
+          className={`relative w-4/5 max-w-sm h-full bg-[#050505] border-l border-[#E4A861]/15 px-8 py-10 flex flex-col justify-between transition-transform duration-500 ease-out z-10 ${
+            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          {/* Close Button & Logo */}
+          <div>
+            <div className="flex items-center justify-between mb-12">
+              <Logo variant="horizontal" />
+              <button 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-[#E4A861] hover:text-white transition-colors focus:outline-none"
+                aria-label="Close Menu"
+              >
+                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
+            
+            {/* Nav Links Stacked */}
+            <ul className="flex flex-col gap-6 text-sm font-semibold tracking-widest uppercase">
+              {["Home", "About", "Services", "Stylists", "Gallery", "Contact"].map((link) => (
+                <li key={link}>
+                  <a 
+                    href={link === "Home" ? "#" : `#${link.toLowerCase()}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block text-white hover:text-[#E4A861] transition-colors py-2 border-b border-white/5"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Action button */}
+          <div className="mt-auto">
+            <button className="w-full border border-[#E4A861] text-[#E4A861] py-4 text-xs font-semibold tracking-widest uppercase hover:bg-[#E4A861] hover:text-black transition-all duration-300">
+              Book Appointment
+            </button>
+          </div>
+        </div>
       </div>
     </nav>
   );
