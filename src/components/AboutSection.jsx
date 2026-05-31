@@ -10,16 +10,12 @@ export default function AboutSection() {
   const sectionRef = useRef(null);
 
   useGSAP(() => {
-    // ── 1. Marquee Animation ──
+    // ── 1. Marquee Animation (Infinite Loop) ──
     gsap.to(".marquee-inner", {
-      xPercent: -30,
+      xPercent: -50,
       ease: "none",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 1,
-      }
+      duration: 35,
+      repeat: -1
     });
 
     // ── 2. Background Giant Text Parallax ──
@@ -102,12 +98,24 @@ export default function AboutSection() {
   return (
     <section ref={sectionRef} id="about" className="relative bg-[#080808] text-white overflow-hidden pb-24 md:pb-32">
       
-      {/* ── 1. Scrolling Marquee (Bridging the gap) ── */}
+      {/* ── 1. Scrolling Marquee (Infinite Loop) ── */}
       <div className="w-full bg-[#E4A861] text-black py-4 overflow-hidden mb-16 md:mb-24 flex items-center border-y border-[#c38c4d]">
-        <div className="marquee-inner flex whitespace-nowrap min-w-full">
+        <div className="marquee-inner flex whitespace-nowrap w-max">
+          {/* Block 1 */}
           <div className="flex items-center text-sm md:text-base font-black tracking-[0.2em] uppercase" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <span key={i} className="flex items-center">
+            {[1, 2, 3, 4].map((i) => (
+              <span key={`a-${i}`} className="flex items-center">
+                LUXURY GROOMING <span className="mx-8 opacity-40">•</span> 
+                CLASSIC CRAFTSMANSHIP <span className="mx-8 opacity-40">•</span> 
+                MASTER STYLISTS <span className="mx-8 opacity-40">•</span> 
+                PREMIUM CARE <span className="mx-8 opacity-40">•</span>
+              </span>
+            ))}
+          </div>
+          {/* Block 2 (identical) */}
+          <div className="flex items-center text-sm md:text-base font-black tracking-[0.2em] uppercase" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
+            {[1, 2, 3, 4].map((i) => (
+              <span key={`b-${i}`} className="flex items-center">
                 LUXURY GROOMING <span className="mx-8 opacity-40">•</span> 
                 CLASSIC CRAFTSMANSHIP <span className="mx-8 opacity-40">•</span> 
                 MASTER STYLISTS <span className="mx-8 opacity-40">•</span> 
