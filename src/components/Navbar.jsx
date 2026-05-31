@@ -21,7 +21,7 @@ export default function Navbar() {
         </div>
         <div className="flex flex-col">
           <span 
-            className="font-black uppercase tracking-[0.15em] leading-none text-xl"
+            className="font-black uppercase tracking-[0.15em] leading-none text-xl text-white hover:text-[#E4A861] transition-colors"
             style={{ fontFamily: "'Archivo Black', sans-serif" }}
           >
             HAIRBAR
@@ -43,7 +43,7 @@ export default function Navbar() {
       </ul>
 
       {/* Call to Action Button */}
-      <button className="hidden md:block border border-[#E4A861] px-6 py-3 text-[10px] md:text-xs font-semibold tracking-widest uppercase hover:bg-[#E4A861] hover:text-black transition-all duration-300">
+      <button className="hidden md:block border border-[#E4A861] text-[#E4A861] px-6 py-3 text-[10px] md:text-xs font-semibold tracking-widest uppercase hover:bg-[#E4A861] hover:text-black transition-all duration-300">
         Book Appointment
       </button>
 
