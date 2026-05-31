@@ -12,12 +12,12 @@ export default function Navbar() {
 
       {/* Navigation Links */}
       <ul className="hidden lg:flex gap-10 text-xs font-semibold tracking-widest uppercase">
-        <li><a href="#" className="text-[#E4A861] hover:text-white transition-colors cursor-pointer">Home</a></li>
-        <li><a href="#about" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">About</a></li>
-        <li><a href="#services" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">Services</a></li>
-        <li><a href="#stylists" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">Stylists</a></li>
-        <li><a href="#gallery" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">Gallery</a></li>
-        <li><a href="#contact" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">Contact</a></li>
+        <li><Link to="/" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer">Home</Link></li>
+        <li><Link to="/about" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">About</Link></li>
+        <li><Link to="/services" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">Services</Link></li>
+        <li><Link to="/stylists" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">Stylists</Link></li>
+        <li><Link to="/gallery" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">Gallery</Link></li>
+        <li><Link to="/contact" className="text-white hover:text-[#E4A861] transition-colors cursor-pointer focus:text-[#E4A861]">Contact</Link></li>
       </ul>
 
       {/* Call to Action Button */}
@@ -26,7 +26,7 @@ export default function Navbar() {
       </button>
 
       {/* Mobile Menu Toggle (Hamburger) */}
-      <button 
+      <button
         onClick={() => setIsMobileMenuOpen(true)}
         className="lg:hidden text-[#E4A861] cursor-pointer focus:outline-none"
         aria-label="Open Menu"
@@ -37,28 +37,26 @@ export default function Navbar() {
       </button>
 
       {/* Sliding Mobile Menu Drawer */}
-      <div 
-        className={`fixed inset-0 z-[100] lg:hidden flex justify-end transition-opacity duration-300 ${
-          isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
+      <div
+        className={`fixed inset-0 z-[100] lg:hidden flex justify-end transition-opacity duration-300 ${isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
       >
         {/* Backdrop overlay */}
-        <div 
-          className="absolute inset-0 bg-black/85 backdrop-blur-md" 
+        <div
+          className="absolute inset-0 bg-black/85 backdrop-blur-md"
           onClick={() => setIsMobileMenuOpen(false)}
         />
-        
+
         {/* Drawer container */}
-        <div 
-          className={`relative w-4/5 max-w-sm h-full bg-[#050505] border-l border-[#E4A861]/15 px-8 py-10 flex flex-col justify-between transition-transform duration-500 ease-out z-10 ${
-            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+        <div
+          className={`relative w-4/5 max-w-sm h-full bg-[#050505] border-l border-[#E4A861]/15 px-8 py-10 flex flex-col justify-between transition-transform duration-500 ease-out z-10 ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
         >
           {/* Close Button & Logo */}
           <div>
             <div className="flex items-center justify-between mb-12">
               <Logo variant="horizontal" />
-              <button 
+              <button
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-[#E4A861] hover:text-white transition-colors focus:outline-none"
                 aria-label="Close Menu"
@@ -68,12 +66,12 @@ export default function Navbar() {
                 </svg>
               </button>
             </div>
-            
+
             {/* Nav Links Stacked */}
             <ul className="flex flex-col gap-6 text-sm font-semibold tracking-widest uppercase">
               {["Home", "About", "Services", "Stylists", "Gallery", "Contact"].map((link) => (
                 <li key={link}>
-                  <a 
+                  <a
                     href={link === "Home" ? "#" : `#${link.toLowerCase()}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="block text-white hover:text-[#E4A861] transition-colors py-2 border-b border-white/5"
@@ -84,7 +82,7 @@ export default function Navbar() {
               ))}
             </ul>
           </div>
-          
+
           {/* Action button */}
           <div className="mt-auto">
             <button className="w-full border border-[#E4A861] text-[#E4A861] py-4 text-xs font-semibold tracking-widest uppercase hover:bg-[#E4A861] hover:text-black transition-all duration-300">
