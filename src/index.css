@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Anton", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+
+  --animate-video-zoom: video-zoom-out 15s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  --animate-vertical-reveal: text-reveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-title-reveal: title-reveal 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-badge-fade-up: badge-fade-up 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-line-grow: line-grow 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-scroll-fade-in: scroll-fade-in 1.5s ease-out forwards;
+}
+
+@keyframes video-zoom-out {
+  from { transform: scale(1.15); }
+  to   { transform: scale(1); }
+}
+
+@keyframes text-reveal {
+  from { opacity: 0; transform: translateY(-20px) rotate(180deg); }
+  to   { opacity: 1; transform: translateY(0)   rotate(180deg); }
+}
+
+@keyframes title-reveal {
+  from { opacity: 0; transform: translateY(80px) scale(0.95); filter: blur(16px); }
+  to   { opacity: 1; transform: translateY(0)   scale(1);    filter: blur(0); }
+}
+
+@keyframes badge-fade-up {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes line-grow {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+@keyframes scroll-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 0.5; }
+}
+
+/* ── Reset ─────────────────────────────────────────────────── */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #050505;
+  box-sizing: border-box;
+  text-align: left;
+  max-width: 100% !important;
+  border-inline: none !important;
+  scroll-behavior: smooth;
+}
+
+* { box-sizing: border-box; }
+
+/* ── Legacy helper ──────────────────────────────────────────── */
+.vertical-text-rl { writing-mode: vertical-rl; }
+
+/* ══════════════════════════════════════════════════════════════
+   CUSTOM EDITORIAL UTILITY CLASSES
+   (Anton for title, Cormorant Garamond for badge/vertical text)
+   ══════════════════════════════════════════════════════════════ */
+
+/* Giant condensed Anton title  */
+@utility hero-title {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(90px, 12vw, 240px);
+  font-weight: 400;           /* Anton is inherently ultra-bold */
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+
+/* Light sans subtitle  */
+@utility hero-subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(15px, 1.4vw, 24px);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.5;
+}
+
+/* Gold rectangular badge  */
+@utility hero-highlight {
+  background: #E4A15A;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 600;
+  color: #ffffff;
+  border-radius: 0;
+}
+
+/* Small vertical "the" prefix  */
+@utility hero-vertical-text {
+  font-family: Arial, Helvetica, sans-serif;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: clamp(12px, 1.4vw, 22px);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.9);
+  text-transform: lowercase;
+}
