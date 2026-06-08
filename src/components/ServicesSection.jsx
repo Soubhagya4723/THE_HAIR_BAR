@@ -25,8 +25,8 @@ export default function ServicesSection() {
       }
     });
 
-    // ── 2. Horizontal Scroll for Services ──
-    const cards = gsap.utils.toArray(".svc-horiz-card");
+    // ── 2. Cinematic Horizontal Scroll ──
+    const cards = gsap.utils.toArray(".svc-cinematic-card");
     
     gsap.to(cards, {
       xPercent: -100 * (cards.length - 1),
@@ -40,52 +40,76 @@ export default function ServicesSection() {
       }
     });
 
+    // ── 3. Internal Parallax for Images and Text ──
+    cards.forEach((card, i) => {
+      const img = card.querySelector(".svc-img");
+      const text = card.querySelector(".svc-text");
+      
+      // We don't want to parallax the first card on load since it's already in view
+      if (i !== 0) {
+        gsap.fromTo(img, 
+          { xPercent: 20 },
+          {
+            xPercent: -20,
+            ease: "none",
+            scrollTrigger: {
+              trigger: scrollContainerRef.current,
+              start: "top top",
+              end: () => "+=" + scrollContainerRef.current.offsetWidth * (cards.length - 1),
+              scrub: 1,
+            }
+          }
+        );
+      }
+    });
+
   }, { scope: sectionRef });
 
   const services = [
     {
       id: "01",
-      title: "Signature Cut",
-      desc: "Tailored precision cuts designed to perfectly complement your features and lifestyle. We blend classic techniques with modern trends.",
-      img: "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?auto=format&fit=crop&q=80&w=800"
+      title: "SIGNATURE CUT",
+      subtitle: "Tailored precision",
+      desc: "Designed to perfectly complement your features and lifestyle. We blend classic barbering techniques with modern trends for a flawless finish.",
+      img: "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?auto=format&fit=crop&q=80&w=1200"
     },
     {
       id: "02",
-      title: "Royal Shave",
-      desc: "A timeless hot towel straight razor shave for the ultimate luxurious relaxation. Smooth, precise, and incredibly soothing.",
-      img: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&q=80&w=800"
+      title: "ROYAL SHAVE",
+      subtitle: "Timeless relaxation",
+      desc: "A hot towel straight razor shave for the ultimate luxurious relaxation. Smooth, precise, and incredibly soothing for the skin.",
+      img: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&q=80&w=1200"
     },
     {
       id: "03",
-      title: "Beard Sculpt",
+      title: "BEARD SCULPT",
+      subtitle: "Impeccably sharp",
       desc: "Detailed grooming, fading, and line-ups to keep your facial hair impeccably sharp. Masterful detailing for a rugged yet clean look.",
-      img: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=800"
+      img: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=1200"
     },
     {
       id: "04",
-      title: "Color & Tone",
-      desc: "Subtle grey blending to striking color transformations, executed with premium products to keep your hair healthy.",
-      img: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=800"
+      title: "COLOR & TONE",
+      subtitle: "Striking transformations",
+      desc: "From subtle grey blending to striking color transformations, executed with premium products to keep your hair incredibly healthy.",
+      img: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=1200"
     }
   ];
 
   return (
-    <section ref={sectionRef} id="services" className="bg-[#080808] text-white pt-8 pb-24 md:pb-32 overflow-hidden">
+    <section ref={sectionRef} id="services" className="bg-[#050505] text-white pt-12 pb-0 overflow-hidden relative border-t border-white/5">
       
       {/* ── 1. The Gap Transition & Big Heading ── */}
-      <div className="w-full flex justify-center mb-16 md:mb-24 px-4">
+      <div className="w-full flex justify-center mb-10 md:mb-16 px-4 relative z-10 pt-10">
         <h2 
           ref={textFillRef}
-          className="text-6xl md:text-8xl lg:text-[10rem] font-black uppercase text-center leading-none"
+          className="text-6xl md:text-8xl lg:text-[10rem] font-black font-archivo uppercase text-center leading-none tracking-tighter"
           style={{ 
-            fontFamily: "'Archivo Black', sans-serif",
-            // The text is an outline by default
-            WebkitTextStroke: "2px rgba(255, 255, 255, 0.1)",
+            WebkitTextStroke: "1px rgba(255, 255, 255, 0.1)",
             color: "transparent",
-            // We'll fill it with gold using background-clip
             backgroundImage: "linear-gradient(to right, #E4A861 50%, transparent 50%)",
             backgroundSize: "200% 100%",
-            backgroundPositionX: "100%", // Starts empty (transparent side)
+            backgroundPositionX: "100%",
             WebkitBackgroundClip: "text",
             backgroundClip: "text"
           }}
@@ -94,80 +118,100 @@ export default function ServicesSection() {
         </h2>
       </div>
 
-      <div className="w-full max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 mb-16">
-        <div className="flex items-center gap-4 mb-6">
-          <h4 className="text-[#E4A861] text-xs font-bold tracking-[0.3em] uppercase">
-            Our Services
-          </h4>
-          <div className="w-12 h-[1px] bg-[#E4A861]"></div>
+      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 mb-20 relative z-10 flex flex-col md:flex-row justify-between items-end gap-8">
+        <div className="max-w-xl">
+          <div className="flex items-center gap-4 mb-6">
+            <h4 className="shiny-gold-text text-xs font-bold tracking-[0.4em] uppercase">
+              The Menu
+            </h4>
+            <div className="w-12 h-[1px] bg-[#E4A861]"></div>
+          </div>
+          <p className="text-gray-400 text-sm md:text-lg leading-relaxed font-light">
+            An immersive journey into the art of grooming. Scroll to explore our defining services.
+          </p>
         </div>
-        <p className="text-gray-400 max-w-xl text-sm md:text-base leading-relaxed tracking-wide">
-          Experience our premium range of grooming services. Scroll down to journey through our tailored offerings.
-        </p>
       </div>
 
-      {/* ── 2. Horizontal Scroll Section ── */}
-      <div ref={scrollContainerRef} className="flex h-[70vh] md:h-[80vh] w-full flex-nowrap overflow-hidden">
+      {/* ── 2. Full-Screen Cinematic Horizontal Scroll ── */}
+      <div ref={scrollContainerRef} className="flex h-[100vh] w-full flex-nowrap overflow-hidden bg-black">
         {services.map((svc) => (
-          // Each card takes up 100vw or a large portion
-          <div key={svc.id} className="svc-horiz-card flex-none w-[90vw] md:w-[70vw] lg:w-[60vw] h-full px-4 md:px-8">
-            <div className="relative w-full h-full overflow-hidden group">
-              
-              {/* Image */}
+          <div key={svc.id} className="svc-cinematic-card relative flex-none w-[100vw] h-full overflow-hidden group border-r border-white/5">
+            
+            {/* The Image (Scales and Parallaxes) */}
+            <div className="absolute inset-0 w-full h-full overflow-hidden">
               <img 
                 src={svc.img} 
                 alt={svc.title} 
-                className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
+                className="svc-img w-full h-full object-cover scale-[1.15] opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
               />
-              
-              {/* Dark Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-700"></div>
+              {/* Dark Overlays for text legibility and mood */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent opacity-100"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/80 via-transparent to-transparent opacity-90"></div>
+            </div>
 
-              {/* Text Content */}
-              <div className="absolute inset-0 p-8 md:p-12 lg:p-16 flex flex-col justify-between">
+            {/* The Content */}
+            <div className="relative z-10 w-full h-full flex flex-col justify-end p-8 md:p-16 lg:p-24 max-w-[1400px] mx-auto">
+              
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 md:gap-24">
                 
-                {/* Large Number Outline */}
-                <h3 
-                  className="text-6xl md:text-8xl font-black text-transparent stroke-white"
-                  style={{ 
-                    fontFamily: "'Archivo Black', sans-serif",
-                    WebkitTextStroke: "1px rgba(228, 168, 97, 0.5)",
-                  }}
-                >
-                  {svc.id}
-                </h3>
-                
-                {/* Title and Description */}
-                <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                  <div className="w-12 h-[2px] bg-[#E4A861] mb-6 group-hover:w-24 transition-all duration-700 ease-out"></div>
-                  <h3 
-                    className="text-4xl md:text-5xl lg:text-6xl text-white mb-6" 
-                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                  >
+                {/* Left Side: Title & Info */}
+                <div className="svc-text flex-1">
+                  <div className="overflow-hidden mb-4">
+                    <span className="block shiny-gold-text text-sm md:text-base font-bold tracking-[0.3em] uppercase transform translate-y-8 group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                      {svc.subtitle}
+                    </span>
+                  </div>
+                  
+                  <h3 className="text-5xl md:text-7xl lg:text-[6rem] text-white leading-[0.9] tracking-tighter mb-8 font-black font-archivo uppercase">
                     {svc.title}
                   </h3>
-                  <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                  
+                  <div className="w-16 h-[2px] bg-[#E4A861] mb-8 transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-700 delay-200"></div>
+                  
+                  <p className="text-gray-300 text-sm md:text-lg leading-relaxed max-w-lg font-light opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-700 delay-300">
                     {svc.desc}
                   </p>
                 </div>
 
+                {/* Right Side: Huge Number & Link */}
+                <div className="flex flex-col items-start md:items-end justify-between h-full">
+                  <div className="text-[6rem] md:text-[10rem] lg:text-[14rem] leading-none text-transparent font-black font-archivo shiny-gold-text opacity-50 group-hover:opacity-100 transition-opacity duration-700">
+                    {svc.id}
+                  </div>
+                  
+                  <div className="mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-500">
+                    <Link to="/services" className="flex items-center gap-4 text-white hover:text-[#E4A861] transition-colors duration-300">
+                      <span className="text-xs md:text-sm tracking-[0.2em] uppercase font-bold">Book this service</span>
+                      <div className="w-12 h-[1px] bg-current"></div>
+                    </Link>
+                  </div>
+                </div>
+
               </div>
+              
             </div>
           </div>
         ))}
 
-        {/* Final "View All" Card */}
-        <div className="svc-horiz-card flex-none w-[90vw] md:w-[40vw] h-full px-4 md:px-8 flex items-center justify-center">
-          <div className="text-center">
-            <h3 
-              className="text-4xl md:text-5xl text-white mb-8" 
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
-            >
-              Discover More
+        {/* Final Call To Action Card */}
+        <div className="svc-cinematic-card relative flex-none w-[100vw] h-full overflow-hidden bg-[#0a0a0a] flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center justify-center opacity-5">
+            <h2 className="text-[20rem] font-black font-archivo uppercase text-white whitespace-nowrap">
+              THE HAIR BAR
+            </h2>
+          </div>
+          
+          <div className="relative z-10 text-center px-4">
+            <h4 className="shiny-gold-text text-sm font-bold tracking-[0.4em] uppercase mb-6">
+              Experience the best
+            </h4>
+            <h3 className="text-6xl md:text-8xl lg:text-9xl text-white mb-12 font-black font-archivo uppercase tracking-tighter">
+              DISCOVER <br /> MORE
             </h3>
             <Link to="/services">
-              <button className="border border-[#E4A861]/50 px-10 py-5 text-xs md:text-sm tracking-[0.2em] uppercase hover:bg-[#E4A861] hover:text-black transition-all duration-300 text-[#E4A861]">
-                View All Services
+              <button className="relative overflow-hidden group bg-transparent border-2 border-[#E4A861] text-[#E4A861] px-12 py-5 text-sm tracking-[0.3em] uppercase font-bold transition-all duration-500">
+                <span className="relative z-10 group-hover:text-black transition-colors duration-500">View Full Menu</span>
+                <div className="absolute inset-0 bg-[#E4A861] transform scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></div>
               </button>
             </Link>
           </div>
@@ -178,3 +222,4 @@ export default function ServicesSection() {
     </section>
   );
 }
+

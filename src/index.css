@@ -145,10 +145,33 @@ html, body, #root {
 }
 
 /* Logo cursive script styles */
+/* Logo cursive script styles */
 .gold-text-cursive {
   font-family: 'Alex Brush', cursive;
   background: linear-gradient(135deg, #B38F4D 0%, #F3E5AB 50%, #AA7C11 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #E4A861; /* Fallback for browsers not supporting text clip */
+}
+
+@keyframes goldShine {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@utility shiny-gold-text {
+  background: linear-gradient(to right, #A67C00 0%, #E4A861 20%, #FFF3D8 40%, #E4A861 60%, #A67C00 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: goldShine 3s linear infinite;
+}
+
+@utility font-archivo {
+  font-family: 'Archivo Black', sans-serif;
+}
+
+@utility font-cormorant {
+  font-family: 'Cormorant Garamond', serif;
 }

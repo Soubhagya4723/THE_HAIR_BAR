@@ -102,7 +102,7 @@ export default function AboutSection() {
       <div className="w-full bg-[#E4A861] text-black py-4 overflow-hidden mb-16 md:mb-24 flex items-center border-y border-[#c38c4d]">
         <div className="marquee-inner flex whitespace-nowrap w-max">
           {/* Block 1 */}
-          <div className="flex items-center text-sm md:text-base font-black tracking-[0.2em] uppercase" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
+          <div className="flex items-center text-sm md:text-base font-black tracking-[0.2em] uppercase font-archivo">
             {[1, 2, 3, 4].map((i) => (
               <span key={`a-${i}`} className="flex items-center">
                 LUXURY GROOMING <span className="mx-8 opacity-40">•</span> 
@@ -113,7 +113,7 @@ export default function AboutSection() {
             ))}
           </div>
           {/* Block 2 (identical) */}
-          <div className="flex items-center text-sm md:text-base font-black tracking-[0.2em] uppercase" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
+          <div className="flex items-center text-sm md:text-base font-black tracking-[0.2em] uppercase font-archivo">
             {[1, 2, 3, 4].map((i) => (
               <span key={`b-${i}`} className="flex items-center">
                 LUXURY GROOMING <span className="mx-8 opacity-40">•</span> 
@@ -128,10 +128,7 @@ export default function AboutSection() {
 
       {/* ── 2. Giant Background Text ── */}
       <div className="absolute top-[20%] left-[-5%] w-[110%] pointer-events-none z-0 opacity-[0.03] overflow-hidden">
-        <h1 
-          className="bg-giant-text text-[15vw] font-black leading-none whitespace-nowrap text-white"
-          style={{ fontFamily: "'Archivo Black', sans-serif" }}
-        >
+        <h1 className="bg-giant-text text-[15vw] font-black leading-none whitespace-nowrap text-white font-archivo">
           EXCELLENCE
         </h1>
       </div>
@@ -140,14 +137,11 @@ export default function AboutSection() {
         
         {/* Section Heading */}
         <div className="flex flex-col items-center justify-center mb-16 md:mb-24 text-center content-trigger">
-          <h4 className="fade-up text-[#E4A861] text-xs font-bold tracking-[0.3em] uppercase mb-4">
+          <h4 className="fade-up shiny-gold-text text-xs font-bold tracking-[0.3em] uppercase mb-4">
             About Hairbar
           </h4>
-          <h2 
-            className="fade-up text-4xl md:text-5xl lg:text-6xl text-white font-light"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
-          >
-            The Destination for <span className="italic text-[#E4A861] font-medium">Gentlemen.</span>
+          <h2 className="fade-up text-4xl md:text-5xl lg:text-6xl text-white font-light font-cormorant">
+            The Destination for <span className="italic shiny-gold-text font-medium">Gentlemen.</span>
           </h2>
           <div className="fade-up w-16 h-[1px] bg-[#E4A861]/40 mt-8"></div>
         </div>
@@ -156,11 +150,8 @@ export default function AboutSection() {
           
           {/* Left Column - Typography & Link */}
           <div className="order-2 lg:order-1 flex flex-col justify-center max-w-xl">
-            <h3 
-              className="fade-up text-5xl md:text-7xl lg:text-8xl font-black mb-2 text-white leading-[0.9]"
-              style={{ fontFamily: "'Archivo Black', sans-serif" }}
-            >
-              CRAFTING<br />LEGACIES
+            <h3 className="fade-up text-5xl md:text-7xl lg:text-8xl font-black mb-2 text-white leading-[0.9] font-archivo">
+              CRAFTING<br /><span className="shiny-gold-text">LEGACIES</span>
             </h3>
             
             <p className="fade-up text-gray-400 text-sm md:text-base leading-relaxed mb-10 mt-8">
@@ -209,14 +200,14 @@ export default function AboutSection() {
               <div className="rotating-badge w-full h-full text-[#E4A861]">
                 <svg viewBox="0 0 100 100" width="100%" height="100%">
                   <path id="circlePath2" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
-                  <text className="text-[11px] font-black tracking-[0.2em] uppercase fill-current" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
+                  <text className="text-[11px] font-black tracking-[0.2em] uppercase fill-current font-archivo">
                     <textPath href="#circlePath2">
                       • Premium Grooming • Est 2023 • Hairbar 
                     </textPath>
                   </text>
                 </svg>
               </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#E4A861] text-2xl">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shiny-gold-text text-2xl">
                 ✂
               </div>
             </div>

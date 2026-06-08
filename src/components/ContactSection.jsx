@@ -8,14 +8,11 @@ export default function ContactSection() {
 
       {/* ── Contact CTA Banner ────────────────────────────────────────── */}
       <div className="w-full max-w-[1500px] mx-auto px-6 md:px-12 lg:px-20 mb-24 text-center">
-        <h4 className="text-[#E4A861] text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase mb-4">
+        <h4 className="shiny-gold-text text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase mb-4">
           Get In Touch
         </h4>
-        <h2
-          className="text-4xl md:text-5xl lg:text-6xl mb-6 leading-[1.1] font-light"
-          style={{ fontFamily: "'Cormorant Garamond', serif" }}
-        >
-          We'd Love To <span className="italic text-[#E4A861] font-medium">Hear From You.</span>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl mb-6 leading-[1.1] font-light font-cormorant">
+          We'd Love To <span className="italic shiny-gold-text font-medium">Hear From You.</span>
         </h2>
         <Link to="/contact">
           <button
